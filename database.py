@@ -5,7 +5,7 @@ from datetime import date, timedelta
 from typing import List, Dict, Optional
 from contextlib import contextmanager
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL = os.getenv("DATABASE_URL", "").replace("postgres://", "postgresql://", 1)
 
 DEFAULT_EXPENSE_CATEGORIES = [
     ("Еда и продукты", "🍔"),
